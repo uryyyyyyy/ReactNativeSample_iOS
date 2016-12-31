@@ -30,3 +30,4 @@ npm-debug.log
 # mine
 
 .idea/
+flow-typed/
