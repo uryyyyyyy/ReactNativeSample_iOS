@@ -8,6 +8,10 @@ import {TopPage} from "./TopPage";
 import {Scene1} from "./navigator/Scene1";
 import {Scene2} from "./navigator/Scene2";
 import {StyleSheet, Text, View, Button} from "react-native";
+import {TabScene2} from "./tabs/TabScene2";
+import {TabScene1} from "./tabs/TabScene1";
+import {TabIcon} from "./tabs/TabIcon";
+import {TabNextScene} from "./tabs/TabNextScene";
 
 const styles = StyleSheet.create({
   tabBar: {
@@ -53,24 +57,28 @@ export class Index extends Component {
             </Scene>
 
             <Scene
-              key="tabbar" tabs
-              tabBarStyle={styles.tabBar} >
+              key="tabbar"
+              tabs
+              tabBarStyle={styles.tabBar}>
               <Scene
-                key="pageA"
+                key="tabScene1"
                 initial
-                component={Scene1}
-                title="PageA"
+                component={TabScene1}
+                title="TabScene1"
+                icon={TabIcon}
               />
-              <Scene
-                key="pageA2"
-                component={Scene1}
-                title="PageA2"
-              />
-              <Scene
-                key="pageA3"
-                component={Scene1}
-                title="PageA3"
-              />
+              <Scene key="tabbar2_root" title="tabbarNav" icon={TabIcon}>
+                <Scene
+                  key="tabScene2"
+                  component={TabScene2}
+                  title="TabScene2"
+                />
+                <Scene
+                  key="tabNextScene"
+                  component={TabNextScene}
+                  title="TabScene3"
+                />
+              </Scene>
             </Scene>
           </Scene>
         </Router>
