@@ -6,7 +6,7 @@
     "flow-typed": "flow-typed install",
     "start": "react-native run-ios",
     "test:ut": "mocha --compilers js:babel-register --require react-native-mock/mock",
-    "test:all": "mocha --compilers js:babel-register --require react-native-mock/mock **/*.spec.js"
+    "test:all": "mocha --compilers js:babel-register --require react-native-mock/mock src/**/*.spec.js"
   },
   "dependencies": {
     "deep-equal": "^1.0.1",
