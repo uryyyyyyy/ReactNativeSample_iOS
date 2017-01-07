@@ -7,7 +7,9 @@
     "start": "react-native run-ios",
     "test:ut": "mocha --compilers js:babel-register ./testPolyfill.js",
     "test:all": "mocha --compilers js:babel-register ./testPolyfill.js src/**/*.spec.js",
-    "server": "node dev-server.js"
+    "server": "node dev-server.js",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix"
   },
   "dependencies": {
     "deep-equal": "^1.0.1",
@@ -17,9 +19,17 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.1.1",
     "babel-preset-power-assert": "^1.0.0",
     "babel-preset-react-native": "1.9.1",
     "enzyme": "^2.7.0",
+    "eslint": "^3.13.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-flowtype": "^2.29.2",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.8.0",
+    "eslint-plugin-standard": "^2.0.1",
     "express": "^4.14.0",
     "fetch-mock": "^5.8.0",
     "flow-bin": "^0.36.0",
@@ -28,8 +38,5 @@
     "power-assert": "^1.4.2",
     "react-native-mock": "^0.2.9",
     "sinon": "^1.17.7"
-  },
-  "jest": {
-    "preset": "react-native"
   }
 }
