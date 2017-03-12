@@ -1,23 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+// @flow
 
-import React, { Component } from 'react';
+import React from 'react';
 import {
-  AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
-export default class ReactNativeSample_ios extends Component {
+export default class Index extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          use iOS
+          Welcome to React Native!
+        </Text>
+        <Text style={styles.instructions}>
+          To get started, edit index.ios.js
+        </Text>
+        <Text style={styles.instructions}>
+          Press Cmd+R to reload,{'\n'}
+          Cmd+D or shake for dev menu
         </Text>
       </View>
     );
@@ -42,5 +44,3 @@ const styles = StyleSheet.create({
     marginBottom: 5,
   },
 });
-
-AppRegistry.registerComponent('ReactNativeSample_ios', () => ReactNativeSample_ios);
