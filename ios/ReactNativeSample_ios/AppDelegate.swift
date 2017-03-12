@@ -1,4 +1,6 @@
 import UIKit
+import Firebase
+import GoogleSignIn
 
 @objc(AppDelegate)
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     self.window = UIWindow.init(frame: UIScreen.main.bounds)
+    GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
     
     //----RCTRootView----
     let settings = RCTBundleURLProvider.sharedSettings()
@@ -20,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     self.rootViewController?.view = rootView;
     self.window?.rootViewController = self.rootViewController;
     self.window?.makeKeyAndVisible()
+    FIRApp.configure()
     return true
   }
   
@@ -50,6 +54,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+  }
+  
+  @available(iOS 9.0, *)
+  func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
+    return GIDSignIn.sharedInstance().handle(url,
+                                             sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                             annotation: [:])
+  }
+  
+  func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+    if let error = error {
+      print("%@", error);
+      return
+    }
+    
+    guard let authentication = user.authentication else { return }
+    let credential = FIRGoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                      accessToken: authentication.accessToken)
+    print("credential")
+    
+    FIRAuth.auth()?.signIn(with: credential) { (user, error2) in
+      if let error2 = error2 {
+        print("%@", error2);
+        return
+      }
+      print("user email: " + (user?.email)!)
+      self.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+  }
+  
+  func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
+              withError error: NSError!) {
+    if let error = error {
+      print("%@", error);
+      return
+    }
   }
 }
 

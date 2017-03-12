@@ -20,8 +20,10 @@ class FirebaseAuthViewController: UIViewController, GIDSignInUIDelegate {
   
   func buttonAction(sender: UIButton!) {
     print("Button tapped")
-    GIDSignIn.sharedInstance().uiDelegate = self
-    GIDSignIn.sharedInstance().signIn()
+    let signIn = GIDSignIn.sharedInstance()
+    signIn?.uiDelegate = self
+    signIn?.clientID = FIRApp.defaultApp()?.options.clientID
+    signIn?.signIn()
   }
   
   override func didReceiveMemoryWarning() {

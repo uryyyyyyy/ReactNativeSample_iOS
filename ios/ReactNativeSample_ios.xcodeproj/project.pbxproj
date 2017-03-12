@@ -41,6 +41,7 @@
 		E7095D871E75BAD800F3E3C8 /* MyModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E7095D861E75BAD800F3E3C8 /* MyModule.m */; };
 		E7095D8B1E75BBD100F3E3C8 /* MyModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7095D8A1E75BBD100F3E3C8 /* MyModule.swift */; };
 		E7095DC01E75BEA600F3E3C8 /* FirebaseAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7095DBF1E75BEA600F3E3C8 /* FirebaseAuthViewController.swift */; };
+		E7095DF51E75C25100F3E3C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7095DF41E75C25100F3E3C8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -273,6 +274,7 @@
 		E7095D861E75BAD800F3E3C8 /* MyModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyModule.m; path = ReactNativeSample_ios/MyModule.m; sourceTree = "<group>"; };
 		E7095D8A1E75BBD100F3E3C8 /* MyModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyModule.swift; path = ReactNativeSample_ios/MyModule.swift; sourceTree = "<group>"; };
 		E7095DBF1E75BEA600F3E3C8 /* FirebaseAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirebaseAuthViewController.swift; path = ReactNativeSample_ios/FirebaseAuthViewController.swift; sourceTree = "<group>"; };
+		E7095DF41E75C25100F3E3C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -421,6 +423,7 @@
 				E7095D861E75BAD800F3E3C8 /* MyModule.m */,
 				E7095D8A1E75BBD100F3E3C8 /* MyModule.swift */,
 				E7095DBF1E75BEA600F3E3C8 /* FirebaseAuthViewController.swift */,
+				E7095DF41E75C25100F3E3C8 /* GoogleService-Info.plist */,
 			);
 			name = ReactNativeSample_ios;
 			sourceTree = "<group>";
@@ -904,6 +907,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				E7095DF51E75C25100F3E3C8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
