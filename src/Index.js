@@ -4,8 +4,11 @@ import React from 'react';
 import {
   StyleSheet,
   Text,
-  View
+  View,
+  Button,
+  NativeModules
 } from 'react-native';
+const {MyModule} = NativeModules;
 
 export default class Index extends React.Component {
   render() {
@@ -14,13 +17,10 @@ export default class Index extends React.Component {
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Button
+          title="Log"
+          onPress={() => MyModule.callFunc(100)}
+        />
       </View>
     );
   }
