@@ -21,6 +21,10 @@ export default class Index extends React.Component {
           title="Log"
           onPress={() => MyModule.callFunc(100)}
         />
+        <Button
+          title="Firebase Auth"
+          onPress={() => MyModule.openView()}
+        />
       </View>
     );
   }

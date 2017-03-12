@@ -8,4 +8,14 @@ class MyModule: NSObject {
     print("num");
     print(num);
   }
+  
+  @objc(openView)
+  func openView() {
+    print("openView");
+    
+    let uiViewController = FirebaseAuthViewController()
+    let appDelegate:AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let rootViewController:UIViewController = appDelegate.rootViewController!
+    rootViewController.present(uiViewController, animated: true, completion: nil)
+  }
 }

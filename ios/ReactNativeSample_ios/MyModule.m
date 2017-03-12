@@ -5,4 +5,6 @@
 
 RCT_EXTERN_METHOD(callFunc:(NSInteger *)num)
 
+RCT_EXTERN_METHOD(openView)
+
 @end

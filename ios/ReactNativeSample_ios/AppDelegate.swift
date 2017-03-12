@@ -4,6 +4,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
+  var rootViewController: UIViewController?
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     self.window = UIWindow.init(frame: UIScreen.main.bounds)
@@ -15,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     rootView?.backgroundColor = UIColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 1)
     //----RCTRootView----
     
-    let rootViewController = UIViewController()
-    rootViewController.view = rootView;
-    self.window?.rootViewController = rootViewController;
+    self.rootViewController = UIViewController()
+    self.rootViewController?.view = rootView;
+    self.window?.rootViewController = self.rootViewController;
     self.window?.makeKeyAndVisible()
     return true
   }
