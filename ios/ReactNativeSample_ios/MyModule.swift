@@ -1,4 +1,5 @@
 import Foundation
+import Firebase
 
 @objc(MyModule)
 class MyModule: NSObject {
@@ -7,6 +8,12 @@ class MyModule: NSObject {
   func callFunc(num: NSInteger) {
     print("num");
     print(num);
+    FIRAnalytics.setUserPropertyString("favorite", forName: "curry")
+    
+    FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+      kFIRParameterContentType:"count" as NSObject,
+      kFIRParameterItemID:"1" as NSObject
+      ])
   }
   
   @objc(openView)
